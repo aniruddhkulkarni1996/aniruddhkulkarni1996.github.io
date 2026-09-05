@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aniruddh Kulkarni — DevOps &amp; Cloud Operations Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D1117;
+    --surface:#161B22;
+    --text:#E6EDF3;
+    --muted:#8B98A5;
+    --accent:#3FB950;
+    --border:#30363D;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{
+    max-width:700px;
+    margin:0 auto;
+    padding:64px 24px 96px;
+  }
+
+  /* ---- Header ---- */
+  header{margin-bottom:40px;}
+  h1{
+    font-size:2rem;
+    font-weight:700;
+    margin:0 0 8px;
+    letter-spacing:-0.01em;
+  }
+  .role{
+    color:var(--muted);
+    font-size:1.05rem;
+    margin:0 0 20px;
+  }
+  .contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.85rem;
+    color:var(--muted);
+  }
+  .contact a{
+    color:var(--muted);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .contact a:hover{color:var(--accent);}
+  .contact a:hover svg{stroke:var(--accent);}
+  .contact svg{
+    width:14px;
+    height:14px;
+    stroke:var(--muted);
+    fill:none;
+    stroke-width:1.8;
+    flex-shrink:0;
+  }
+  .contact span{opacity:0.4;}
+
+  /* ---- Status strip (hero) ---- */
+  .status{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--border);
+    border-radius:6px;
+    overflow:hidden;
+    margin:32px 0 48px;
+    background:var(--surface);
+  }
+  .status-item{
+    padding:18px 14px;
+    border-right:1px solid var(--border);
+    position:relative;
+  }
+  .status-item:last-child{border-right:none;}
+  .status-item::before{
+    content:"";
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 6px var(--accent);
+  }
+  .status-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:1.3rem;
+    font-weight:600;
+    color:var(--accent);
+    display:block;
+  }
+  .status-label{
+    font-size:0.72rem;
+    color:var(--muted);
+    margin-top:4px;
+    display:block;
+  }
+
+  /* ---- Sections ---- */
+  section{margin-bottom:44px;}
+  h2{
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--accent);
+    font-family:'JetBrains Mono',monospace;
+    margin:0 0 18px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--border);
+  }
+  .summary{
+    color:var(--text);
+    font-size:0.98rem;
+    max-width:64ch;
+  }
+
+  /* ---- Skills ---- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:10px 20px;
+  }
+  .skills-grid dt{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--muted);
+    padding-top:2px;
+  }
+  .skills-grid dd{
+    margin:0;
+    font-size:0.92rem;
+  }
+
+  /* ---- Experience (log style) ---- */
+  .entry{
+    position:relative;
+    padding-left:24px;
+    border-left:2px solid var(--border);
+    padding-bottom:28px;
+  }
+  .entry:last-child{padding-bottom:0;}
+  .entry::before{
+    content:"";
+    position:absolute;
+    left:-6px;
+    top:4px;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--accent);
+  }
+  .entry-header{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:4px 16px;
+    margin-bottom:4px;
+  }
+  .entry-title{
+    font-weight:600;
+    font-size:1rem;
+  }
+  .entry-org{
+    color:var(--muted);
+    font-size:0.9rem;
+    margin-bottom:2px;
+  }
+  .entry-date{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--muted);
+    white-space:nowrap;
+  }
+  .highlight{
+    font-size:0.9rem;
+    color:var(--accent);
+    background:rgba(63,185,80,0.08);
+    border:1px solid rgba(63,185,80,0.25);
+    border-radius:4px;
+    padding:8px 12px;
+    margin:10px 0 14px;
+  }
+  ul.bullets{
+    margin:8px 0 0;
+    padding-left:18px;
+  }
+  ul.bullets li{
+    margin-bottom:8px;
+    font-size:0.94rem;
+  }
+  ul.bullets li b{
+    font-weight:600;
+    color:var(--text);
+  }
+  ul.bullets li .metric{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--accent);
+    font-weight:600;
+  }
+
+  /* ---- Projects ---- */
+  .project{margin-bottom:22px;}
+  .project-title{
+    font-weight:600;
+    font-size:0.96rem;
+    margin-bottom:6px;
+  }
+  .project ul.bullets{margin-top:6px;}
+
+  /* ---- Education ---- */
+  .edu-row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:4px 16px;
+    font-size:0.94rem;
+  }
+  .edu-date{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--muted);
+    font-size:0.85rem;
+  }
+
+  footer{
+    margin-top:60px;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    color:var(--muted);
+  }
+
+  @media (max-width:600px){
+    .status{grid-template-columns:repeat(2,1fr);}
+    .status-item:nth-child(2){border-right:none;}
+    .status-item:nth-child(3),.status-item:nth-child(4){border-top:1px solid var(--border);}
+    .skills-grid{grid-template-columns:1fr;}
+    .skills-grid dt{padding-top:8px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Aniruddh Kulkarni</h1>
+    <p class="role">DevOps &amp; Cloud Operations Engineer</p>
+    <div class="contact">
+      <a href="tel:9480964903">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        9480964903
+      </a>
+      <span>·</span>
+      <a href="mailto:aniruddhkulkarni11096@gmail.com">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+        aniruddhkulkarni11096@gmail.com
+      </a>
+      <span>·</span>
+      <a href="https://linkedin.com/in/aniruddh~kulkarni" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M6.5 8.5v9M6.5 5.5v.01M11.5 17.5v-5.5a2.5 2.5 0 0 1 5 0v5.5M11.5 12v5.5"/></svg>
+        linkedin.com/in/aniruddh~kulkarni
+      </a>
+    </div>
+  </header>
+
+  <div class="status">
+    <div class="status-item">
+      <span class="status-num">99%</span>
+      <span class="status-label">app uptime</span>
+    </div>
+    <div class="status-item">
+      <span class="status-num">−40%</span>
+      <span class="status-label">MTTR</span>
+    </div>
+    <div class="status-item">
+      <span class="status-num">−93%</span>
+      <span class="status-label">MTTD</span>
+    </div>
+    <div class="status-item">
+      <span class="status-num">100+</span>
+      <span class="status-label">P0/P1 resolved</span>
+    </div>
+  </div>
+
+  <section id="summary">
+    <h2>Summary</h2>
+    <p class="summary">
+      Proactive DevOps &amp; Cloud Operations Engineer with 5+ years engineering and maintaining
+      resilient, scalable production environments. Bridges development and operations by managing
+      CI/CD pipelines, automating infrastructure on AWS, and orchestrating containerized workloads
+      with Kubernetes. Strong practitioner of SRE principles, using monitoring and observability
+      tools (Mosaic, Grafana, Splunk) to minimize downtime, reduce MTTR, and ensure SLA compliance.
+      Recognized for leading high-stakes incident response and driving operational excellence in
+      24x7 global support models.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="skills-grid">
+      <dt>Cloud &amp; Containers</dt>
+      <dd>AWS (EC2, VPC, RDS, S3, IAM, CloudWatch, Auto Scaling, Load Balancers), Docker, Kubernetes</dd>
+
+      <dt>CI/CD &amp; Automation</dt>
+      <dd>Rio (CI/CD), Jenkins, Git/GitHub, Linux</dd>
+
+      <dt>Monitoring &amp; Observability</dt>
+      <dd>Splunk, Mosaic, Grafana, Nagios, Neuron</dd>
+
+      <dt>AI &amp; Data</dt>
+      <dd>LangChain, LangGraph, RAG (Retrieval-Augmented Generation)</dd>
+
+      <dt>Operations &amp; Core IT</dt>
+      <dd>SQL, ServiceNow, Incident Management (P0/P1), Change Management, Root Cause Analysis (RCA), SLA Management</dd>
+    </dl>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">IT Analyst — DevOps &amp; Production Operations</span>
+        <span class="entry-date">Jan 2020 – Present</span>
+      </div>
+      <div class="entry-org">Tata Consultancy Services Limited · Bangalore, India &amp; Montevideo, Uruguay</div>
+
+      <div class="highlight">
+        Selected for onsite engagement in Montevideo (2022–2023) to lead client-facing operations,
+        coordinate the offshore team, and drive service improvements.
+      </div>
+
+      <ul class="bullets">
+        <li><b>CI/CD &amp; Release Management:</b> Managed and maintained CI/CD pipelines using Rio, enabling zero-downtime (ZDT) rolling deployments for <span class="metric">4</span> critical web applications.</li>
+        <li><b>Incident Response &amp; SRE:</b> Led resolution for <span class="metric">100+</span> P0/P1 production incidents, maintaining <span class="metric">99%</span> application uptime across global systems. Improved MTTR by <span class="metric">40%</span> through runbook optimization and team mentoring.</li>
+        <li><b>Monitoring &amp; Observability:</b> Engineered and maintained monitoring dashboards in Splunk and Grafana, configuring proactive alerts that reduced MTTD by <span class="metric">93%</span>.</li>
+        <li><b>Automation &amp; Process Improvement:</b> Scoped <span class="metric">3</span> automation initiatives for repetitive tasks (kernel patching across <span class="metric">100+</span> production servers, SSL certificate renewals across <span class="metric">30+</span> servers), saving ~<span class="metric">3</span> manual-support hours per activity while maintaining <span class="metric">100%</span> compliance.</li>
+        <li><b>Disaster Recovery:</b> Orchestrated <span class="metric">5+</span> full-scale DR drills, consistently achieving an RTO of ~<span class="metric">1 hour</span> and updating all post-mortem RCA documentation.</li>
+        <li><b>Client &amp; Stakeholder Management:</b> Served as primary technical point of contact for client stakeholders in Montevideo, leading monthly service reviews and presentations on application performance and stability.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects &amp; Continuous Learning</h2>
+
+    <div class="project">
+      <div class="project-title">TCS AI Hackathon — Participation Certificate Recipient</div>
+      <ul class="bullets">
+        <li>Developed a proof-of-concept multi-agent system for complex query resolution.</li>
+        <li>Used a RAG (Retrieval-Augmented Generation) model, orchestrating agent workflows with LangChain and LangGraph.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-title">AWS Cloud &amp; DevOps Pipeline Project</div>
+      <ul class="bullets">
+        <li>Designed and deployed a secure, multi-tier AWS VPC architecture using public/private subnets, security groups, and NACLs.</li>
+        <li>Built an end-to-end CI/CD pipeline in Jenkins to automatically build, test, and deploy applications.</li>
+        <li>Containerized a microservices application using Docker and authored Kubernetes manifests for deployment, scaling, and service discovery.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-row">
+      <span>Bachelor of Engineering</span>
+      <span class="edu-date">2014 – 2018</span>
+    </div>
+  </section>
+
+  <footer>
+    last updated 2026
+  </footer>
+
+</div>
+</body>
+</html>
