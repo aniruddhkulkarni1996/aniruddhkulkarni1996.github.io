@@ -1,6 +1,6 @@
 # Aniruddh Kulkarni — Resume
 
-Live site: **[aniruddhkulkarni1996.github.io](https://aniruddhkulkarni1996.github.io)**
+Live site: **[aniruddhkulkarni.github.io](https://aniruddhkulkarni.github.io)**
 
 A single-page resume for **Aniruddh Kulkarni**, DevOps & Cloud Operations Engineer, built as a static HTML/CSS page and hosted on GitHub Pages.
 
